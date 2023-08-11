@@ -51,7 +51,32 @@ namespace Examples.Operations
 
       return apiClient.Endpoints.JournalEntries.Add( myJournalEntry);
     }
-   
+
+    /// <summary>
+    /// Adds a Journal Entry 
+    /// </summary>
+    public JournalEntriesModel AddReverseEntry(string orgCode, int Event, int year, int period, string source, string entryNumber, string status, 
+                                               string description, string reverseEntry, int reversalYear, int reversalPeriod, System.DateTime transactionDate)
+    {
+      var myJournalEntry = new JournalEntriesModel
+      {
+        Organization = orgCode,
+        Event = Event,
+        Year = year,
+        Period = period,
+        Source = source,
+        EntryNumber = entryNumber,
+        Status = status,
+        Description = description,
+        ReverseEntry = reverseEntry,
+        ReversalYear = reversalYear,
+        ReversalPeriod = reversalPeriod,
+        TransactionDate = transactionDate
+      };
+
+      return apiClient.Endpoints.JournalEntries.Add(myJournalEntry);
+    }
+
     /// <summary>
     /// Updates an existing journal entry by updating the description value
     /// </summary>

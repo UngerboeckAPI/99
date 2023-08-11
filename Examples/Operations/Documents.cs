@@ -49,6 +49,25 @@ namespace Examples.Operations
     }
 
     /// <summary>
+    /// An add example for financial documents
+    /// </summary>    
+    public DocumentsModel AddFinancialDocument(string orgCode, string type, string fileName, string documentData, string text)
+    {
+      //Note that sequence number isn't set for POST operations.  Ungerboeck will assign the sequence number automatically.
+      var myDocument = new DocumentsModel
+      {
+        Organization = orgCode,
+        Type = type, //The file extension must be mapped to one of the recognized Ungerboeck document types.  Use USISDKConstants.DocumentTypeCodes to get the list of type codes.
+        NewFileName = fileName,
+        NewDocumentData = documentData, //Files must be in the form of a byte array converted to a base 64 encoded string.  The APIUtil class contains conversion functions to help you: apiClient.Endpoints.Documents.Get(FileBytes)
+        Description = text, //This will be the Ungerboeck description for the file
+        Subject = "GL",
+      };
+
+      return apiClient.Endpoints.Documents.Add(myDocument);
+    }
+
+    /// <summary>
     /// An add example for order documents
     /// </summary>    
     public DocumentsModel AddOrderDocument(string orgCode, string type, string fileName, string documentData, string text, int orderNbr, int eventID, string accountCode, int functionID, string subject = "")

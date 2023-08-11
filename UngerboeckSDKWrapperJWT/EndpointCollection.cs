@@ -381,6 +381,16 @@ namespace Ungerboeck.Api.Sdk
       }
     }
 
+    private States StatesApi;
+    public States States
+    {
+      get
+      {
+        if (StatesApi == null) StatesApi = new States(client);
+        return StatesApi;
+      }
+    }
+
     private Conversations ConversationsApi;
     public Conversations Conversations
     {

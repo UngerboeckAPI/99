@@ -1,8 +1,5 @@
-using Ungerboeck.Api.Models;
-using Ungerboeck.Api.Models.Subjects;
-using System.Collections.Generic;
 using Ungerboeck.Api.Models.Options;
-using System.Net.Http;
+using Ungerboeck.Api.Models.Subjects;
 
 namespace Ungerboeck.Api.Sdk.Endpoints
 {
@@ -11,7 +8,9 @@ namespace Ungerboeck.Api.Sdk.Endpoints
   /// </summary>
   public class MarketSegments : Base<MarketSegmentsModel>
   {
-    protected internal MarketSegments(ApiClient api) : base(api) { }
+    protected internal MarketSegments(ApiClient api) : base(api)
+    {
+    }
 
     /// <summary>
     /// Use this endpoint to search for a list of this subject.
@@ -34,6 +33,29 @@ namespace Ungerboeck.Api.Sdk.Endpoints
     public MarketSegmentsModel Get(string orgCode, string major, string minor, Ungerboeck.Api.Models.Options.Subjects.MarketSegments options = null)
     {
       return base.Get(new { orgCode, major, minor }, options);
+    }
+
+    /// <summary>
+    /// Use this endpoint to add a single entry of this subject.
+    /// </summary>
+    /// <param name="model">This should contain a filled model of this subject.  Note that any null model properties will be ignored for the save.</param>
+    /// <param name="options">This contains optional configurations.</param>
+    /// <returns>A newly added, single model for this subject.</returns>
+    public MarketSegmentsModel Add(MarketSegmentsModel model, Ungerboeck.Api.Models.Options.Subjects.MarketSegments options = null)
+    {
+      return base.Add(model, options);
+    }
+
+    /// <summary>
+    /// Use this endpoint to edit a single entry of this subject.
+    /// </summary>
+    /// <param name="model">This should contain a filled model of this subject.  Note that any null model properties will be ignored for the save.</param>
+    /// <param name="options">This contains optional configurations.</param>
+    /// <returns>An updated, single model for this subject.</returns>
+    public MarketSegmentsModel Update(MarketSegmentsModel model, Ungerboeck.Api.Models.Options.Subjects.MarketSegments options = null)
+    {
+      string orgCode = "10"; // Defaulting it to 10. Org code is no longer used for market segments but the PUT endpoint URL has orgCode as a parameter.
+      return base.Update(new { orgCode, model.Major, model.Minor }, model, options);
     }
   }
 }

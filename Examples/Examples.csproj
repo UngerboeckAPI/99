@@ -205,6 +205,7 @@
     <Compile Include="Operations\StatementBatches.cs" />
     <Compile Include="Operations\StatementDetails.cs" />
     <Compile Include="Operations\StatementHeaders.cs" />
+    <Compile Include="Operations\States.cs" />
     <Compile Include="Operations\Tasks.cs" />
     <Compile Include="Operations\Usages.cs" />
     <Compile Include="Operations\UserRoles.cs" />
@@ -258,15 +259,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Ungerboeck.Api.Models">
-      <Version>1.99.1.3</Version>
+    <PackageReference Include="Ungerboeck.Api.Sdk">
+      <Version>1.99.3.2</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UngerboeckSDKWrapperJWT\UngerboeckSDKWrapperJWT.csproj">
-      <Project>{6c5e2fc8-e244-447d-ac97-fbb76bebe7ce}</Project>
-      <Name>UngerboeckSDKWrapperJWT</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

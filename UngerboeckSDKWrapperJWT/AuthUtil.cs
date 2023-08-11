@@ -16,8 +16,7 @@ namespace Ungerboeck.Api.Sdk
 
     private static string GenerateJWT(string userId, string key, string secret, DateTime expiration, DateTime notBefore, string proxyUserId = null)
     {
-      var secretGuid = new Guid(secret);
-      var symmetricKey = secretGuid.ToByteArray();
+      var symmetricKey = System.Text.Encoding.UTF8.GetBytes(secret);
       var tokenHandler = new JwtSecurityTokenHandler();
 
       var utcNow = DateTime.UtcNow;
