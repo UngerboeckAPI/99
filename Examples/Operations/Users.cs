@@ -85,7 +85,7 @@ namespace Examples.Operations
       myUser.Group = "NSORT";
       myUser.Initials = "JW";
       myUser.Printer = "TEST";
-      myUser.EmailSendProcess = "SM"; //SMTP
+      myUser.EmailSendProcess = "N";
       myUser.ReplyToEmail = "reply@company.com";
       myUser.Hold = "N";
       myUser.LoginID = "NEWLOGIN";

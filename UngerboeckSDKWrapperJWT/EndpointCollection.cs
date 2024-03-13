@@ -381,16 +381,6 @@ namespace Ungerboeck.Api.Sdk
       }
     }
 
-    private States StatesApi;
-    public States States
-    {
-      get
-      {
-        if (StatesApi == null) StatesApi = new States(client);
-        return StatesApi;
-      }
-    }
-
     private Conversations ConversationsApi;
     public Conversations Conversations
     {
@@ -1839,6 +1829,16 @@ namespace Ungerboeck.Api.Sdk
       {
         if (StatementHeadersApi == null) StatementHeadersApi = new StatementHeaders(client);
         return StatementHeadersApi;
+      }
+    }
+
+    private States StatesApi;
+    public States States
+    {
+      get
+      {
+        if (StatesApi == null) StatesApi = new States(client);
+        return StatesApi;
       }
     }
 
