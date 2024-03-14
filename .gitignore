@@ -15,3 +15,4 @@ Ungerboeck.png
 *.vssscc
 *.lnk
 .gitignore
+/Examples/.vs/Examples.csproj.dtbcache.json
